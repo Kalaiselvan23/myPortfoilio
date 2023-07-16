@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="/css/blogPage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <span id="logo">Logo</span>
+      <div class="links">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Works</a>
+        <a href="">Contact</a>
+      </div>
+      <span id="talk-btn">Let's Talk</span>
+    </nav>
+    <div id="blog-main">
+      <div id="blog-parent">
+        <% for(let blog of blogs){ %>
+        <div class="blog-div">
+          <img src="" alt="img" />
+          <div>
+            <span class="post-info"
+              ><%=`${blog.date}-Comments(${blog.reactions.comments.count})-Likes(${blog.reactions.likes.count})`
+              %></span
+            >
+            <h1><%= blog.title %></h1>
+            <p><%= blog.content %></p>
+            <button class="readMore-btn">Read More</button>
+          </div>
+        </div>
+        <%} %>
+      </div>
+      <div id="side-div">
+        <label for="search" id="search-label">
+          <input type="text" placeholder="Search here" id="search" />
+          <button id="search-btn">Search</button>
+        </label>
+        <div id="recent-post">
+          <h2>RECENT POSTS</h2>
+          <ul>
+            <li>React Redux</li>
+            <li>NodeJS Express MongoDB</li>
+            <li>Python Flask MySQL PostgreSQL</li>
+          </ul>
+        </div>
+        <div id="category">
+          <h2>CATEGORY</h2>
+          <ul>
+            <li>Python</li>
+            <li>DSA</li>
+            <li>React</li>
+            <li>Express</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
